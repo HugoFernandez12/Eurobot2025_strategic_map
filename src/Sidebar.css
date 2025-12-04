@@ -1,0 +1,42 @@
+/* Sidebar.css */
+.sidebar {
+  width: 200px;
+  background-color: black;
+  position: fixed; /* La barra lateral queda fija */
+  top: 0;
+  left: 0;
+  height: 100vh; /* La altura es completa */
+  border-right: 1px solid black;
+}
+
+.buton-sidebar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 8rem;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.input-sidebar {
+  margin: 5px 0;
+  padding: 10px 15px;
+  background-color: #bd0000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 98px;
+  height: 20px;
+}
+
+.input-sidebar:hover{
+  background-color: #7a0000;
+}

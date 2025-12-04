@@ -1,0 +1,345 @@
+* {
+  font-family: "Oxanium", sans-serif;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+#root {
+  overflow-y: scroll;
+}
+
+.App {
+  display: flex;
+  height: 100vh; /* Asegura que la app ocupe la altura completa */
+}
+
+/* Estilo para el rectángulo */
+.rectangle {
+  position: relative;
+  width: 900px;
+  height: 600px;
+  background-image: url("./assets/playmat_2025_FINAL.png");
+  background-color: aqua;
+  margin: 20px auto;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+/* Estilo para las líneas horizontales del grid */
+.horizontal-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: black;
+  opacity: 0.3;
+}
+
+/* Estilo para las líneas verticales del grid */
+.vertical-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: black;
+  opacity: 0.3;
+}
+
+/* Estilo para el punto dibujado donde se hace clic */
+.point {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+  pointer-events: all; /* Habilitar eventos para permitir clics en el punto */
+  cursor: pointer;
+}
+
+/* Estilo para el contenedor de botones */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Estilo para el botón */
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.line-label-horizontal {
+  position: absolute;
+  font-size: 12px;
+  transform: translate(-130%, -50%);
+}
+
+.line-label-vertical {
+  position: absolute;
+  font-size: 12px;
+  transform: translate(-50%, -130%);
+}
+
+.selected-text {
+  margin: 0;
+  width: 120px;
+  align-self: center;
+  margin-bottom: 0.7rem;
+}
+
+.selected-text-container {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+}
+
+.title-app-container {
+  display: flex;
+  justify-content: center;
+}
+
+.title-app {
+  font-size: 32px;
+  color: #333;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+button {
+  margin: 5px 0;
+  padding: 10px 15px;
+  background-color: #bd0000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #7a0000;
+}
+
+.current-mode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+.current-mode-text {
+  margin: 0;
+  margin-top: 1rem;
+  padding: 0;
+}
+
+.history-point {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  border: solid, 1px, lightgray;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  padding-top: 0.7rem;
+  padding-bottom: 0.4rem;
+}
+
+.history-input {
+  width: 80px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  align-self: center;
+}
+
+.history-select
+{
+  height: 23px;
+  width: 80px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  align-self: center;
+}
+
+/* Contenido principal */
+.main-content {
+  flex: 1; /* Toma el resto del espacio disponible */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  margin-left: 260px;
+}
+
+.show-content-container {
+  text-align: center;
+}
+
+.show-content-button {
+  background-color: white;
+  color: black;
+}
+
+.show-content-button:hover {
+  background-color: white;
+  color: black;
+}
+
+/*
+.show-content-text {
+}
+*/
+
+.erase-last-button {
+  width: 13rem;
+  align-self: center;
+}
+
+.grid-options-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: space-around;
+  width: 900px;
+}
+
+.text-tilte-selected {
+  justify-self: center;
+}
+
+.key-value-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 200px;
+}
+
+.title-value-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.title-selected-text{
+  margin: 0;
+  align-self: center;
+}
+
+.title-history-input{
+  width: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.estimation-history-input{
+  width: 2.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.blue-strategy-clicked{
+  background-color: #005b8c;
+  margin-left: 1rem;
+  border: solid black 1px;
+}
+
+.yellow-strategy-clicked{
+  background-color: #f7b500;
+  margin-left: 1rem;
+  border: solid black 1px;
+}
+
+.blue-strategy-clicked:hover{
+  background-color: #005b8c;
+}
+
+.yellow-strategy-clicked:hover{
+  background-color: #f7b500;
+}
+
+.toggle-button {
+  width: 60px;
+  height: 30px;
+  border-radius: 25px;
+  background-color: #ddd;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.toggle-button.blue {
+  background-color: white;
+  border: 1px solid black;
+}
+
+.toggle-button.neutral {
+  background-color: white;
+  border: 1px solid black;
+}
+
+.toggle-button.yellow {
+  background-color: white;
+  border: 1px solid black;
+}
+
+.ball {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  top: 5px;
+  transition: transform 0.3s;
+  border: 1px solid black;
+}
+
+.ball.blue{
+  background-color: #005b8c;
+  transform: translateX(5px);
+}
+
+.ball.neutral {
+  transform: translateX(20px); /* Mueve la bola al centro */
+  background-color: gray;
+}
+
+.ball.yellow{
+  background-color: #f7b500;
+  transform: translateX(35px);
+}
+
+.cursor-personalizado-mover {
+  cursor: url("assets/mover-cursor.gif") 10.5 10.5 , auto; /* Reemplaza 'ruta-del-icono.png' con la ruta de tu icono */
+}
+
+.cursor-personalizado-editar {
+  cursor: url("assets/editar-cursor.gif"), auto; /* Reemplaza 'ruta-del-icono.png' con la ruta de tu icono */
+}
+
+.cursor-normal {
+  cursor: auto;
+}
